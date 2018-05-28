@@ -14,6 +14,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 myfont = matplotlib.font_manager.FontProperties(fname="/Library/Fonts/Songti.ttc")
+myfont = matplotlib.font_manager.FontProperties(fname="/System/Library/Fonts/PingFang.ttc")
+
 sns.set(font=myfont.get_name())
 
 # This function should be called every time a figure is plotted
@@ -33,6 +35,15 @@ def display_chinese(ax, myfont):
         label.set_fontproperties(myfont) 
         
 %matplotlib inline
+
+ax = plt.subplot(1,2,1)
+plt.plot(range(10))
+plt.xlabel(u'好', fontproperties=myfont)
+ax.set_xlabel(u'我', fontproperties=myfont)
+ax=plt.subplot(1,2,2)
+plt.plot(range(20))
+ax.set_xlabel(u'我', fontproperties=myfont)
+
 ```
 
 # plot_list
